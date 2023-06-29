@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Peta Gmaps Sederhana</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCuHNl7KTuIBo3AM6ob1H54o9QNvmqrKoM&callback=viewMap"></script>
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -8.5930695, lng:116.3202515},
+                    zoom: 8 
+                 });
+                var marker = new google.maps.Marker({
+                    position: {lat: -8.5930695, lng:116.3202515},
+                    map: map,
+                    title:"Lombok",
+                });
+                var infowindow = new google.maps.InfoWindow({
+                    content:"Selamat Datang di Lombok"
+                });
+                infowindow.open(map,marker); 
+            }
+            google.maps.event.addDomListener(window, 'load', initMap);
+        </script>
+    </head>
+    <body>
+        <div id ="map"style="width: 100%;height: 380px;"></div>
+    </body>
+</html>

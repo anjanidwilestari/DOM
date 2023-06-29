@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <title>Belajar Info Window </title>
+    </head>
+    <body>
+        <!--elemen untuk menampilkan petas-->
+        <div id ="map"style="width: 100%;height: 380px;"></div>
+        <script>
+            function initMap(){
+                // membuat objek untuk titik koordinat
+                var lombok = {lat: -8.5830695, lng: 116.3202515};
+
+                // membuat objek peta
+                var map = new google.maps.Map (document.getElementById('map'), {
+                    zoom: 9,
+                    center: lombok
+                });
+
+                // mebuat konten untuk info window
+                var contentString = '<h2>Hello Dunia!</h2>';
+
+                // membuat objek info window
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString,
+                    position: lombok
+                });
+
+                // tampilkan info window pada peta
+                infowindow.open (map) ;
+
+            }
+        </script>
+        <script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCuHNl7KTuIBo3AM6ob1H54o9QNvmqrKoM&callback=initMap"></script>
+                
+    </body>
+</html>
